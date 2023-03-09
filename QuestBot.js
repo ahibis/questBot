@@ -5,7 +5,6 @@ const questionsData = require("./questions.json");
 const delay = (gap) => new Promise((resolve) => setTimeout(resolve, gap));
 
 class QuestBot {
-  static questBots = {};
   client = undefined;
   currentQuestionId = undefined;
   countOfRightAnswers = 0;
@@ -86,15 +85,15 @@ class QuestBot {
     QuestBotList.removeQuestBot(this._chatId)
   }
   async reply(message) {
-    if(/сдаюсь/i.test(message)){
+    if(/сдаюсь/i.test(message))
       return this.giveUp()
-    }
-    if(/завершить квест/i.test(message)){
+
+    if(/завершить квест/i.test(message))
       return this.complete()
-    }
-    if (!this.isStarted) {
+
+    if (!this.isStarted) 
       return this.start();
-    }
+    
     if (this.checkAnswer(message)) {
       this.countOfRightAnswers += 1;
       this.scores += this.scoresForAns;
