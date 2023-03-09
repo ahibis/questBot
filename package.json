@@ -1,0 +1,14 @@
+{
+  "name": "lab1",
+  "version": "1.0.0",
+  "description": "tamda bot",
+  "main": "index.js",
+  "author": "pokesteve31<pokesteve31@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev":"node ."
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.61.0"
+  }
+}
